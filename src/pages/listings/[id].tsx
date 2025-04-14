@@ -101,8 +101,6 @@ const Listing: NextPage<{
     },
   );
 
-  const listingViewAnalytic = trpc.analytics.listingView.useMutation();
-
   const carsOnListing = trpc.listings.getAllCarsOnListing.useQuery(
     {
       id: id,
@@ -179,13 +177,6 @@ const Listing: NextPage<{
 
     return groupedBySeries;
   }, [listing, carsOnListing.data]);
-
-  useEffect(() => {
-    if (!listing) return;
-    void listingViewAnalytic.mutateAsync({
-      listingId: listing.id,
-    });
-  }, [listing]);
 
   const quantityAvailable =
     listing?.parts.reduce((acc, cur) => {

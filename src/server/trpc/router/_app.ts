@@ -13,7 +13,6 @@ import { orderRouter } from "./order";
 import { orderItemsRouter } from "./orderItems";
 import { checkoutRouter } from "./checkout";
 import { adminRouter } from "./admin";
-import { analyticsRouter } from "./analytics";
 import { homepageImagesRouter } from "./homepageImages";
 import { inventoryLocationsRouter } from "./inventoryLocations";
 import { usersRouter } from "./users";
@@ -34,7 +33,6 @@ export const appRouter = router({
   orderItems: orderItemsRouter,
   checkout: checkoutRouter,
   admin: adminRouter,
-  analytics: analyticsRouter,
   homepageImages: homepageImagesRouter,
   users: usersRouter,
 });
